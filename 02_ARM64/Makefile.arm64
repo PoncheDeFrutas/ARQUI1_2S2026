@@ -1,0 +1,37 @@
+# ARM64 nativo: ejecutar dentro de Raspberry Pi OS de 64 bits.
+
+AS = as
+LD = ld
+
+BUILD = build
+SRC ?= main.s
+
+PROGRAM := $(patsubst %.s,%,$(SRC))
+OBJ := $(BUILD)/$(PROGRAM).o
+TARGET := $(BUILD)/$(PROGRAM)
+DEP := $(OBJ:.o=.d)
+
+ASFLAGS ?= -g -I $(dir $(SRC)) -I .
+LDFLAGS ?=
+
+.PHONY: all run clean info
+
+all: $(TARGET)
+
+$(OBJ): $(SRC)
+	@mkdir -p $(@D)
+	$(AS) $(ASFLAGS) --MD $(DEP) -o $@ $<
+
+$(TARGET): $(OBJ)
+	$(LD) $(LDFLAGS) -o $@ $<
+
+run: $(TARGET)
+	$(TARGET)
+
+clean:
+	rm -rf $(BUILD)
+
+info:
+	@echo "make -f Makefile.arm64 SRC=src/00_hello_world.s run"
+
+-include $(DEP)

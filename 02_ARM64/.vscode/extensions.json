@@ -2,6 +2,7 @@
     "recommendations": [
         "ms-vscode.cpptools",
         "ms-vscode.makefile-tools",
+        "ms-vscode-remote.remote-ssh",
         "EightLayerStudio.StackScope",
         "mkornelsen.vscode-arm64"
     ]

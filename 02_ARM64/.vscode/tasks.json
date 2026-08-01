@@ -51,6 +51,35 @@
                     "endsPattern": "^QEMU_GDB_READY$"
                 }
             }
+        },
+        {
+            "label": "ARM64 Raspberry Pi: compilar archivo activo",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-f",
+                "${workspaceFolder}/Makefile.arm64",
+                "SRC=${relativeFile}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "ARM64 Raspberry Pi: ejecutar archivo activo",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-f",
+                "${workspaceFolder}/Makefile.arm64",
+                "SRC=${relativeFile}",
+                "run"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
         }
     ]
 }

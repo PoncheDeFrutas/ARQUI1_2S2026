@@ -23,6 +23,28 @@
                     "text": "set pagination off"
                 }
             ]
+        },
+        {
+            "name": "Depurar ARM64 en Raspberry Pi",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "ARM64 Raspberry Pi: compilar archivo activo",
+            "stopAtEntry": true,
+            "setupCommands": [
+                {
+                    "text": "set architecture aarch64"
+                },
+                {
+                    "text": "set disassemble-next-line on"
+                },
+                {
+                    "text": "set pagination off"
+                }
+            ]
         }
     ]
 }
