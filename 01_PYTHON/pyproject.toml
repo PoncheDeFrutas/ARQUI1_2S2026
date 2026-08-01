@@ -1,0 +1,8 @@
+[project]
+name = "01-python"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "adafruit-circuitpython-dht>=4.0.12",
+    "rpi-gpio>=0.7.1",
+]
