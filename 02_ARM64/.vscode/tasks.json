@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ARM64 QEMU: ejecutar archivo activo",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-f",
+                "${workspaceFolder}/Makefile.qemu",
+                "SRC=${relativeFile}",
+                "run"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "ARM64 QEMU: preparar depuracion",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-f",
+                "${workspaceFolder}/Makefile.qemu",
+                "SRC=${relativeFile}",
+                "gdb-vscode"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "arm64-qemu",
+                "pattern": {
+                    "regexp": "a^"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^Starting QEMU",
+                    "endsPattern": "^QEMU_GDB_READY$"
+                }
+            }
+        }
+    ]
+}

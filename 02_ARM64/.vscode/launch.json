@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Depurar ARM64 con QEMU",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch",
+            "miDebuggerServerAddress": "localhost:1234",
+            "preLaunchTask": "ARM64 QEMU: preparar depuracion",
+            "stopAtEntry": true,
+            "setupCommands": [
+                {
+                    "text": "set architecture aarch64"
+                },
+                {
+                    "text": "set disassemble-next-line on"
+                },
+                {
+                    "text": "set pagination off"
+                }
+            ]
+        }
+    ]
+}
