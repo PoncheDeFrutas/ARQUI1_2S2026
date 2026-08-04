@@ -6,12 +6,16 @@ msg: .ascii "Hello, World!\n"
 .global _start
 
 _start:
-    mov x0, #1
-    ldr x1, =msg
-    mov x2, msg_len
-    mov x8, #64
-    svc #0
+    // write(1, dirección, longitud)
+    mov x0, #1              // stdout
+    ldr x1, =msg            // dirección del mensaje
+    mov x2, msg_len         // longitud del mensaje
+    mov x8, #64             // syscall de escritura
+    svc #0                  // ejecutar syscall
 
-    mov x0, #0
-    mov x8, #93
-    svc #0
+    // exit(0)
+    mov x0, #0              // código de salida
+    mov x8, #93             // syscall de salida
+    svc #0                  // ejecutar syscall
+
+// print("Hello, World!\n")
