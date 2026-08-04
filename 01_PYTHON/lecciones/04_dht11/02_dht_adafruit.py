@@ -14,7 +14,6 @@ try:
     while True:
         try:
             current_time = time.time()
-
             if current_time - last_read_time >= read_interval:
                 temperature_c = sensor.temperature
                 humidity = sensor.humidity
@@ -25,7 +24,6 @@ try:
                 else:
                     print(f"Temperatura: {temperature_c:.1f} °C")
                     print(f"Humedad: {humidity:.1f} %")
-
         except RuntimeError as e:
             print(f"Error al leer el sensor DHT11: {e}")
         time.sleep(0.2)

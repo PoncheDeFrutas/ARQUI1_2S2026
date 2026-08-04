@@ -3,6 +3,7 @@
 import RPi.GPIO as GPIO
 import time
 
+# void septup()
 LED_PIN = 21
 
 # Configuración de Modo de Pines
@@ -14,6 +15,7 @@ GPIO.setup(LED_PIN, GPIO.OUT)
 # Desactivar advertencias
 GPIO.setwarnings(False)
 
+# void loop()
 try:
     while True:
         print("Blinking LED...")

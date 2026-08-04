@@ -2,7 +2,6 @@ import time
 import threading
 import RPi.GPIO as GPIO
 
-
 # void setup()
 LED_PIN = 21
 PERIOD = 0.5 #segundos
