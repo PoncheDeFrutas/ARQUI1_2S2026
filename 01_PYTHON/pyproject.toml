@@ -3,6 +3,7 @@ name = "01-python"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
+    "adafruit-circuitpython-ads1x15>=3.0.5",
     "adafruit-circuitpython-dht>=4.0.12",
     "dotenv>=0.9.9",
     "paho-mqtt>=2.1.0",

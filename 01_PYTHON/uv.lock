@@ -7,6 +7,7 @@ name = "01-python"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "adafruit-circuitpython-ads1x15" },
     { name = "adafruit-circuitpython-dht" },
     { name = "dotenv" },
     { name = "paho-mqtt" },
@@ -17,6 +18,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "adafruit-circuitpython-ads1x15", specifier = ">=3.0.5" },
     { name = "adafruit-circuitpython-dht", specifier = ">=4.0.12" },
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "paho-mqtt", specifier = ">=2.1.0" },
@@ -40,6 +42,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ae/ee/63370e529cb21a56406b58773ab2e97c3bffd8dec391746df1fe238e3c1e/adafruit_blinka-9.2.0.tar.gz", hash = "sha256:0358f02840f91127246d9c5fa6d49660e2ab1134cc4e56fd5d88ce4c39a50942", size = 937569, upload-time = "2026-07-30T18:02:52.711Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d9/e1/62809e4d3f24f433e27e66f03afab7aa653627c7fbb9ddad9088032b6366/adafruit_blinka-9.2.0-py3-none-any.whl", hash = "sha256:ba761bd1eb5fd7c6626e2505dd7e63b0df9b7859eea91d952aba4ee2bec83ee9", size = 1064581, upload-time = "2026-07-30T18:02:51.066Z" },
+]
+
+[[package]]
+name = "adafruit-circuitpython-ads1x15"
+version = "3.0.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "adafruit-blinka" },
+    { name = "adafruit-circuitpython-busdevice" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ce/a6/95d98e3f794cccf06cbf7a003c4d861127018ae8802d2d74b0f52ac996f6/adafruit_circuitpython_ads1x15-3.0.5.tar.gz", hash = "sha256:8ed46aba3765c4222aafcdbcfef5731d29e29b0cd1d17706086350d84a66ac6c", size = 30375, upload-time = "2026-06-18T18:17:42.469Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e5/32/d8fd98a78a7583df786518c425fabf611b078362fe574a66530457dce8c3/adafruit_circuitpython_ads1x15-3.0.5-py3-none-any.whl", hash = "sha256:5042b06be6516a2e5f1a230f03b03e6c9749ff1d2e9252a2708dd906839a1478", size = 11504, upload-time = "2026-06-18T18:17:41.659Z" },
 ]
 
 [[package]]
