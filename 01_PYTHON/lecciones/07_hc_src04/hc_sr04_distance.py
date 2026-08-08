@@ -1,25 +1,13 @@
-import time
-
 from hcsr04 import HCSR04
 
-sensor = HCSR04(
-    trig_pin=23,
-    echo_pin=24,
-)
+sensor = HCSR04(23, 24)
 
 try:
     while True:
-        distance = sensor.median()
+        distance = sensor.read()
 
-        if distance is None:
-            print("Lectura inválida")
-        else:
-            print(f"Distancia: {distance:.1f} cm")
-
-        time.sleep(0.2)
-
-except KeyboardInterrupt:
-    print("Saliendo...")
+        if distance is not None:
+            print(f"{distance:.1f} cm")
 
 finally:
     sensor.cleanup()
