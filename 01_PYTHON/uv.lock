@@ -12,6 +12,7 @@ dependencies = [
     { name = "paho-mqtt" },
     { name = "pymongo" },
     { name = "rpi-gpio" },
+    { name = "rpi-lcd" },
 ]
 
 [package.metadata]
@@ -21,6 +22,7 @@ requires-dist = [
     { name = "paho-mqtt", specifier = ">=2.1.0" },
     { name = "pymongo", specifier = ">=4.17.0" },
     { name = "rpi-gpio", specifier = ">=0.7.1" },
+    { name = "rpi-lcd", specifier = ">=0.0.3" },
 ]
 
 [[package]]
@@ -249,6 +251,21 @@ name = "rpi-gpio"
 version = "0.7.1"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/c4/0f/10b524a12b3445af1c607c27b2f5ed122ef55756e29942900e5c950735f2/RPi.GPIO-0.7.1.tar.gz", hash = "sha256:cd61c4b03c37b62bba4a5acfea9862749c33c618e0295e7e90aa4713fb373b70", size = 29090, upload-time = "2022-02-06T15:15:06.022Z" }
+
+[[package]]
+name = "rpi-lcd"
+version = "0.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "smbus" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1c/0b/aee69b701c654c474d873e121b65cbfb69212bf88d45f7dd791333686680/rpi-lcd-0.0.3.tar.gz", hash = "sha256:40a14ebbd6c261f631ac73775811194e384b21520cd262f05b06fd7047b3411c", size = 2487, upload-time = "2022-03-01T11:20:48.182Z" }
+
+[[package]]
+name = "smbus"
+version = "1.1.post2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/5c/70e14aa4f0c586efc017e1d1aa6e2f7921eefc7602fc2d03368ff912aa91/smbus-1.1.post2.tar.gz", hash = "sha256:f96d345e0aa10053a8a4917634f1dc37ba1f656fa5cace7629b71777e90855c6", size = 104988, upload-time = "2019-03-08T16:25:59.532Z" }
 
 [[package]]
 name = "sysv-ipc"

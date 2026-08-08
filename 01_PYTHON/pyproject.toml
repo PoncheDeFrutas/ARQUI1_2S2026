@@ -8,4 +8,5 @@ dependencies = [
     "paho-mqtt>=2.1.0",
     "pymongo>=4.17.0",
     "rpi-gpio>=0.7.1",
+    "rpi-lcd>=0.0.3",
 ]
