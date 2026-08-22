@@ -7,9 +7,9 @@ msg: .ascii "Hello, World!\n"
 
 _start:
     // write(1, dirección, longitud)
-    mov x0, #1              // stdout
     ldr x1, =msg            // dirección del mensaje
     mov x2, msg_len         // longitud del mensaje
+    mov x0, #1              // stdout
     mov x8, #64             // syscall de escritura
     svc #0                  // ejecutar syscall
 
