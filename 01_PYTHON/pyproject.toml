@@ -7,7 +7,7 @@ dependencies = [
     "adafruit-circuitpython-dht>=4.0.12",
     "dotenv>=0.9.9",
     "paho-mqtt>=2.1.0",
-    "pymongo>=4.17.0",
+    "pymongo[srv]==3.12",
     "rpi-gpio>=0.7.1",
     "rpi-lcd>=0.0.3",
 ]
