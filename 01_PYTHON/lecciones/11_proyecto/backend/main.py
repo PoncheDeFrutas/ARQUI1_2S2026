@@ -9,7 +9,6 @@ result = subprocess.run(
     text=True,
 )
 
-
 if result .returncode == 0:
     print("El programa se ejecutó correctamente.")
     print("Salida:")
