@@ -1,6 +1,8 @@
 import os
 from Globals import shared
 
+import time
+
 from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
@@ -14,6 +16,7 @@ class mongodbu:
         self.db_name = os.getenv("MONGODB_DB")
         self.col_name = os.getenv("MONGODB_COLLECTION")
         self.col = None
+        self.lastSend = 0
 
     def setup(self):
         if not self.uri:
@@ -24,6 +27,13 @@ class mongodbu:
         self.col = self.client[self.db_name][self.col_name]
 
     def insert(self, doc):
+        current_time = time.time()
+
+        if current_time - self.lastSend < 2:
+            return  # Evita enviar datos si no han pasado 2 segundos desde el último envío
+
+        self.lastSend = current_time
+
         if self.col is None:
             raise RuntimeError("La colección no está configurada. Llama a setup() primero.")
         self.col.insert_one(doc)

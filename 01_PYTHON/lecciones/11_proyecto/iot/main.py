@@ -23,7 +23,7 @@ class main:
                     "timestamp": time.time()
                 }
                 self.mongo.insert(doc)
-                time.sleep(1)
+                time.sleep(0.2)
         except KeyboardInterrupt:
             print("Programa terminado por el usuario.")
         finally:
