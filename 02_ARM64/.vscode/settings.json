@@ -1,4 +1,6 @@
 {
     "debug.allowBreakpointsEverywhere": true,
     "terminal.integrated.cwd": "${workspaceFolder}",
+    "cSpell.language": "en",
+    "cSpell.enabled": false
 }

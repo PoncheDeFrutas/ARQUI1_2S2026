@@ -1,10 +1,12 @@
 import subprocess
+import stat
 from pathlib import Path
 
-program_path = Path(__file__).parent / "00_hello_world"
+program_path = Path(__file__).parent / "src" / "build" / "00_hello_world"
+program_path.chmod(program_path.stat().st_mode | stat.S_IXUSR)
 
 result = subprocess.run(
-    [program_path],
+    [str(program_path)],
     capture_output=True,
     text=True,
 )
