@@ -1,0 +1,96 @@
+:root {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #e7eff8;
+  background: #0b1626;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+  --bg: #0b1626;
+  --surface: #14243a;
+  --text: #e7eff8;
+  --muted: #9caec5;
+  --temperature: #ffbd69;
+  --humidity: #59d8e5;
+  --border: #293c54;
+  --grid: #2a3a50;
+  --heading: Bahnschrift, 'Arial Narrow', 'Segoe UI', sans-serif;
+  --mono:
+    'Cascadia Code', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+textarea {
+  font: inherit;
+}
+button,
+a,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+button,
+textarea {
+  border-radius: 7px;
+}
+a {
+  color: inherit;
+}
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--humidity);
+  outline-offset: 4px;
+}
+button:disabled {
+  opacity: 0.48;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+}
+::selection {
+  color: var(--bg);
+  background: var(--humidity);
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  padding: 12px;
+  z-index: 10;
+  background: var(--surface);
+}
+.skip-link:focus {
+  top: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
