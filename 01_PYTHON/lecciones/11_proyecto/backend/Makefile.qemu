@@ -1,0 +1,43 @@
+# ARM64 + QEMU
+
+AS = aarch64-linux-gnu-as
+LD = aarch64-linux-gnu-ld
+QEMU = qemu-aarch64
+
+BUILD = build
+SRC ?= main.s
+
+PROGRAM := $(patsubst %.s,%,$(SRC))
+OBJ := $(BUILD)/$(PROGRAM).o
+TARGET := $(BUILD)/$(PROGRAM)
+DEP := $(OBJ:.o=.d)
+
+ASFLAGS ?= -g -I $(dir $(SRC)) -I .
+LDFLAGS ?=
+
+.PHONY: all run gdb-vscode clean info
+
+all: $(TARGET)
+
+$(OBJ): $(SRC)
+	@mkdir -p $(@D)
+	$(AS) $(ASFLAGS) --MD $(DEP) -o $@ $<
+
+$(TARGET): $(OBJ)
+	$(LD) $(LDFLAGS) -o $@ $<
+
+run: $(TARGET)
+	$(QEMU) $(TARGET)
+
+gdb-vscode: $(TARGET)
+	@echo "Starting QEMU and waiting for GDB on port 1234..."
+	@$(QEMU) -g 1234 $(TARGET) & pid=$$!; sleep 0.1; if kill -0 $$pid 2>/dev/null; then echo "QEMU_GDB_READY"; else exit 1; fi; wait $$pid
+
+clean:
+	rm -rf $(BUILD)
+
+info:
+	@echo "make -f Makefile.qemu SRC=src/00_hello_world.s run"
+	@echo "make -f Makefile.qemu SRC=src/00_hello_world.s gdb-vscode"
+
+-include $(DEP)
