@@ -31,7 +31,7 @@ run: $(TARGET)
 
 gdb-vscode: $(TARGET)
 	@echo "Starting QEMU and waiting for GDB on port 1234..."
-	@$(QEMU) -g 1234 $(TARGET) & pid=$$!; sleep 0.1; if kill -0 $$pid 2>/dev/null; then echo "QEMU_GDB_READY"; else exit 1; fi; wait $$pid
+	@{ sleep 0.1; echo "QEMU_GDB_READY"; } & exec $(QEMU) -g 1234 $(TARGET)
 
 clean:
 	rm -rf $(BUILD)

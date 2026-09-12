@@ -14,13 +14,22 @@
             "stopAtEntry": true,
             "setupCommands": [
                 {
+                    "text": "-enable-pretty-printing"
+                },
+                {
                     "text": "set architecture aarch64"
                 },
                 {
                     "text": "set disassemble-next-line on"
                 },
                 {
+                    "text": "set step-mode on"
+                },
+                {
                     "text": "set pagination off"
+                },
+                {
+                    "text": "set breakpoint auto-hw on"
                 }
             ]
         },
@@ -36,13 +45,22 @@
             "stopAtEntry": true,
             "setupCommands": [
                 {
+                    "text": "-enable-pretty-printing"
+                },
+                {
                     "text": "set architecture aarch64"
                 },
                 {
                     "text": "set disassemble-next-line on"
                 },
                 {
+                    "text": "set step-mode on"
+                },
+                {
                     "text": "set pagination off"
+                },
+                {
+                    "text": "set breakpoint auto-hw on"
                 }
             ]
         }
