@@ -1,19 +1,19 @@
 // x21, direccion de donde empezamos a leer
 
-atoi_csv:
+atoi:
     mov x10, #0             // resultado = 0
     mov x5, #10             // base 10
     mov x7, #0              // bandera de numero activo
 
-atoi_loop:
+atoi_read:
     ldrb w23, [x21], #1
 
     // verificar si es digito
     cmp w23, '0'
-    blt atoi_done
+    blt atoi_end
 
     cmp w23, '9'
-    bgt atoi_done
+    bgt atoi_end
 
     // convertir ASCII a numero
     sub w23, w23, '0'
@@ -28,7 +28,7 @@ atoi_loop:
     // marcar numero activo
     mov x7, #1
 
-    b atoi_loop
+    b atoi_read
 
-atoi_done:
+atoi_end:
     ret

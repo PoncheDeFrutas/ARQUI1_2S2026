@@ -51,7 +51,7 @@ read_column_to_stack:
     ldr x21, =buffer
 
 utils_process_line:
-    bl atoi_csv
+    bl atoi
 
     cbz x7, utils_after_column
 
