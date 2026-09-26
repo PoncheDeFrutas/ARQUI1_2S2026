@@ -1,13 +1,13 @@
 .section .data
 array:
-    .word #7, #3, #21, #10
+    .word 7, 3, 21, 10
 
 num:
-    .word #567890
+    .word 567890
 
 .section .bss
 final:
-    .skip #20
+    .skip 20
 
 .section .text
 .global _start
