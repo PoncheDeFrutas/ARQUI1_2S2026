@@ -1,6 +1,6 @@
 .section .data
 array:
-    .word 7, 3, 21, 10
+    .word 7, 3, 21, 10, 0
 
 num:
     .word 567890

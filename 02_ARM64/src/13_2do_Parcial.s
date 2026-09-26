@@ -8,6 +8,7 @@ num:
 .section .bss
 final:
     .skip 20                // 5 enteros de 4 bytes
+                            // 7, 3, 567890, 21, 0
 
 .section .text
 .global _start
