@@ -1,5 +1,3 @@
-// Convierte "echo hola mundo" en argc y argv para la MiniShell
-
 .data
 line_buffer:
     .asciz "echo hola mundo"          // Buffer que vamos a modificar

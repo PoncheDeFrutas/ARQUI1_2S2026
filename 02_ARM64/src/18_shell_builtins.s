@@ -1,5 +1,3 @@
-// Compara argv[0] y llama a help, echo, clear o exit
-
 .data
 name_clear: .asciz "clear"
 name_help:  .asciz "help"

@@ -1,5 +1,3 @@
-// El padre espera al hijo y continúa después de wait4
-
 .data
 program_path: .asciz "/bin/echo"
 arg_one:      .asciz "hola"
