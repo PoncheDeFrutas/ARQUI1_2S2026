@@ -43,7 +43,7 @@ _start:
     mov x2, parent_before_len
     bl print
 
-    // Primero practicar con un hijo que imprime y sale aquí usa execve
+    // Primero usar con un hijo que imprime y sale aquí usa execve
     mov x0, #17                     // SIGCHLD para avisar al padre
     mov x1, #0                      // Usar la pila actual en el hijo
     mov x2, #0                      // parent_tid no se usa
