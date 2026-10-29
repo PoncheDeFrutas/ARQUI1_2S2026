@@ -5,7 +5,7 @@ a:
     .octa 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF    // Numero de 128 bits
 
 resultado:
-    .skip 24                                    // Reservamos 192 bits para el resultado
+    .skip 24                                    // Reservamos 192 bits para el resultado (128 bits + 64 bits)
 
 .section .text
 .global _start
