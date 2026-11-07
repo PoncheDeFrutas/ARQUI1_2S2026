@@ -23,6 +23,15 @@ contar_negativos:
 
 bucle:
     ldr x1, [x3], #8            // cargar el siguiente elemento y avanzar el puntero
+    /*
+    otras formas de cargar el dato
+    ldr x1, [x3]                 // cargar el siguiente elemento
+    add x3, x3, #8               // avanzar el puntero
+
+    ldr x1, [x3, x2, lsl #3]     // cargar el siguiente elemento usando un desplazamiento
+    add x2, x2, #1               // avanzar el puntero
+
+    */
     cmp x1, #0                  // comparar con 0
     bge siguiente               // si es mayor o igual a 0, saltar al siguiente
 
